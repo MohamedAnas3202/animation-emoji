@@ -1,0 +1,150 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(120deg, #f0f8ff, #87ceeb);
+    animation: background-shift 5s infinite alternate;
+  }
+
+  .wrapper {
+    position: relative;
+    animation: move-across 6s infinite linear;
+  }
+
+  .dancer {
+    position: relative;
+    width: 100px;
+    height: 200px;
+    animation: body-sway 2s infinite ease-in-out;
+  }
+
+  .head {
+    width: 80px;
+    height: 70px;
+    background-color: #ffcc4d;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: head-bob 1s infinite ease-in-out, pulse 1.5s infinite ease-in-out;
+  }
+
+  .body {
+    width: 70px;
+    height: 100px;
+    background-color: #000;
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 10px;
+  }
+
+  .arm {
+    width: 30px;
+    height: 120px;
+    background-color: #000;
+    position: absolute;
+    top: 70px;
+    border-radius: 10px;
+    transform-origin: top;
+    animation: arm-swing 1.5s infinite ease-in-out;
+  }
+
+  .arm.left {
+    left: -20px;
+    animation-delay: -0.75s;
+  }
+
+  .arm.right {
+    right: -20px;
+  }
+
+  .leg {
+    width: 40px;
+    height: 160px;
+    background-color: #000;
+    position: absolute;
+    top: 140px;
+    border-radius: 10px;
+    transform-origin: top;
+    animation: leg-step 1.5s infinite ease-in-out;
+  }
+
+  .leg.left {
+    left: 15px;
+  }
+
+  .leg.right {
+    right: 15px;
+    animation-delay: -0.75s;
+  }
+
+  @keyframes background-shift {
+    0% {
+      background: linear-gradient(120deg, #f0f8ff, #87ceeb);
+    }
+    100% {
+      background: linear-gradient(120deg, #87ceeb, #f0f8ff);
+    }
+  }
+
+  @keyframes body-sway {
+    0%, 100% {
+      transform: rotate(-10deg) translateY(0);
+    }
+    50% {
+      transform: rotate(10deg) translateY(5px);
+    }
+  }
+
+  @keyframes head-bob {
+    0%, 100% {
+      transform: translateX(-50%) translateY(0);
+    }
+    50% {
+      transform: translateX(-50%) translateY(10px);
+    }
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1) translateX(-50%);
+    }
+    50% {
+      transform: scale(1.1) translateX(-50%);
+    }
+  }
+
+  @keyframes arm-swing {
+    0%, 100% {
+      transform: rotate(20deg);
+    }
+    50% {
+      transform: rotate(-20deg);
+    }
+  }
+
+  @keyframes leg-step {
+    0%, 100% {
+      transform: rotate(-20deg);
+    }
+    50% {
+      transform: rotate(20deg);
+    }
+  }
+
+  @keyframes move-across {
+    0% {
+      transform: translateX(-200px);
+    }
+    50% {
+      transform: translateX(200px);
+    }
+    100% {
+      transform: translateX(-200px);
+    }
+  }
